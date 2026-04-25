@@ -1,164 +1,84 @@
 ## Часть 1.
 ### Шаг 1. Создание топологии сети.
-![](topoligi1.png)
+![](сриншоты1/Pasted%20image%2020260415145006.png)
 
 *Рис.1 Топология сети.*
 
-
-
-
 ### Шаг 2. Настройка banner MOTD.
-
 
 #### Настраиваем на каждом роутере MOTD согласно заданию и выдаем hostname, согласно топологии.
 
-![[Pasted image 20260415145006.png]]
+![](сриншоты1/Pasted%20image%2020260415145936.png)
 
 *Рис.2 Настройка MOTD на rus-msk-rt0.*
 
 ####Такую же настройку, но с изменением имен проводим с остальными устройствами.
 
-![[Pasted image 20260415145936.png]]
+![](сриншоты1/Pasted%20image%2020260415150105.png)
 
 *Рис3. Настройка MOTD на rus-msk-rt1*
 
-![[Pasted image 20260415150105.png]]
+![](сриншоты1/Pasted%20image%2020260415154116.png)
 
 *Рис.4 Настройка MOTD на rus-nsk-rt0*
 
 ### Шаг 3. Новые имена устройств.
 
-<table>
+#### Москва
 
-<tr>
+| Первичная | Измененная |
+| --- | --- |
+| server0 | rus-msk-serv1 |
+| switch0 | rus-msk-sw1 |
+| router0 | rus-msk-r1 |
+| router1 | rus-msk-r2 |
+| Multilayer switch1 | rus-msk-multisw1 |
+| PC0 | rus-msk-pc1 |
+| PC1 | rus-msk-pc2 |
 
-<td>
+#### Новосибирск
 
-<h3>Москва</h3>
-
-<table>
-
-<tr><th>Первичная</th><th>Измененная</th></tr>
-
-<tr><td>server0</td><td>rus-msk-serv1</td></tr>
-
-<tr><td>switch0</td><td>rus-msk-sw1</td></tr>
-
-<tr><td>router0</td><td>rus-msk-r1</td></tr>
-
-<tr><td>router1</td><td>rus-msk-r2</td></tr>
-
-<tr><td>Multilayer switch1</td><td>rus-msk-multisw1</td></tr>
-
-<tr><td>PC0</td><td>rus-msk-pc1</td></tr>
-
-<tr><td>PC1</td><td>rus-msk-pc2</td></tr>
-
-</table>
-
-</td>
-
-<td>
-
-<h3>Новосибирск</h3>
-
-<table>
-
-<tr><th>Первичная</th><th>Измененная</th></tr>
-
-<tr><td>router0</td><td>rus-nsk-r1</td></tr>
-
-<tr><td>switch0</td><td>rus-nsk-sw1</td></tr>
-
-<tr><td>switch1</td><td>rus-nsk-sw2</td></tr>
-
-<tr><td>PC0</td><td>rus-nsk-pc1</td></tr>
-
-<tr><td>PC1</td><td>rus-nsk-pc2</td></tr>
-
-<tr><td>PC2</td><td>rus-nsk-pc3</td></tr>
-
-<tr><td>PC3</td><td>rus-nsk-pc4</td></tr>
-
-<tr><td>PC4</td><td>rus-nsk-pc5</td></tr>
-
-<tr><td>PC5</td><td>rus-nsk-pc6</td></tr>
-
-</table>
-
-</td>
-
-</tr>
-
-</table>
+| Первичная | Измененная |
+| --- | --- |
+| router0 | rus-nsk-r1 |
+| switch0 | rus-nsk-sw1 |
+| switch1 | rus-nsk-sw2 |
+| PC0 | rus-nsk-pc1 |
+| PC1 | rus-nsk-pc2 |
+| PC2 | rus-nsk-pc3 |
+| PC3 | rus-nsk-pc4 |
+| PC4 | rus-nsk-pc5 |
+| PC5 | rus-nsk-pc6 |
 
 *Таб.1 Новые имена устройств*
 
 ### Шаг 4. Выдача доменных имен согласно местоположению.
 
-<table>
+#### Москва
 
-<tr>
+| Устройство | Домен |
+| --- | --- |
+| rus-msk-serv1 | msk.local |
+| rus-msk-sw1 | msk.local |
+| rus-msk-r1 | msk.local |
+| rus-msk-r2 | msk.local |
+| rus-msk-multisw1 | msk.local |
+| rus-msk-pc1 | msk.local |
+| rus-msk-pc2 | msk.local |
 
-<td>
+#### Новосибирск
 
-<h3>Москва</h3>
-
-<table>
-
-<tr><th>Устройство</th><th>Домен</th></tr>
-
-<tr><td>rus-msk-serv1</td><td>msk.local</td></tr>
-
-<tr><td>rus-msk-sw1</td><td>msk.local</td></tr>
-
-<tr><td>rus-msk-r1</td><td>msk.local</td></tr>
-
-<tr><td>rus-msk-r2</td><td>msk.local</td></tr>
-
-<tr><td>rus-msk-multisw1</td><td>msk.local</td></tr>
-
-<tr><td>rus-msk-pc1</td><td>msk.local</td></tr>
-
-<tr><td>rus-msk-pc2</td><td>msk.local</td></tr>
-
-</table>
-
-</td>
-
-<td>
-
-<h3>Новосибирск</h3>
-
-<table>
-
-<tr><th>Устройство</th><th>Домен</th></tr>
-
-<tr><td>rus-nsk-r1</td><td>nsk.local</td></tr>
-
-<tr><td>rus-nsk-sw1</td><td>nsk.local</td></tr>
-
-<tr><td>rus-nsk-sw2</td><td>nsk.local</td></tr>
-
-<tr><td>rus-nsk-pc1</td><td>nsk.local</td></tr>
-
-<tr><td>rus-nsk-pc2</td><td>nsk.local</td></tr>
-
-<tr><td>rus-nsk-pc3</td><td>nsk.local</td></tr>
-
-<tr><td>rus-nsk-pc4</td><td>nsk.local</td></tr>
-
-<tr><td>rus-nsk-pc5</td><td>nsk.local</td></tr>
-
-<tr><td>rus-nsk-pc6</td><td>nsk.local</td></tr>
-
-</table>
-
-</td>
-
-</tr>
-
-</table>
+| Устройство | Домен |
+| --- | --- |
+| rus-nsk-r1 | nsk.local |
+| rus-nsk-sw1 | nsk.local |
+| rus-nsk-sw2 | nsk.local |
+| rus-nsk-pc1 | nsk.local |
+| rus-nsk-pc2 | nsk.local |
+| rus-nsk-pc3 | nsk.local |
+| rus-nsk-pc4 | nsk.local |
+| rus-nsk-pc5 | nsk.local |
+| rus-nsk-pc6 | nsk.local |
 
 *Таб.2 Доменные имена устройств*
 
@@ -166,11 +86,11 @@
 
 #### Создаем на rus-nsk-sw1 и rus-nsk-sw2 VLAN 2,3 и 4, не присваивая им имен.
 
-![[Pasted image 20260415154116.png]]
+![](сриншоты1/Pasted%20image%2020260415154116.png)
 
 *Рис.5 Создание VLAN без имен на rus-nsk-sw1*
 
-![[Pasted image 20260415154420.png]]
+![](сриншоты1/Pasted%20image%2020260415154420.png)
 
 *Рис.6 Создание VLAN без имен на rus-nsk-sw2*
 
@@ -178,11 +98,11 @@
 
 #### Назначаем VLANы на интерфейсы согласно заданию.
 
-![[Pasted image 20260415161735.png]]
+![](сриншоты1/Pasted%20image%2020260415161735.png)
 
 *Рис.7 Присвоение VLAN на rus-nsk-sw1.*
 
-![[Pasted image 20260415161835.png]]
+![](сриншоты1/Pasted%20image%2020260415161835.png)
 
 *Рис.8 Присвоение VLAN на rus-nsk-sw2.*
 
@@ -194,21 +114,19 @@
 1. Использовать стандартный протокол для создания логической связи;
 2. Коммутатор 0 долден являтся ответственным за инициирование согласования канала EtherChannel;
 3. Изменить интерфейс агрегированного канала на транковый на обоих коммутаторах.
-   
 ```
 
-![[Pasted image 20260415162613.png]]
-![[Pasted image 20260415162629.png]]
-![[Pasted image 20260415162641.png]]
+![](сриншоты1/Pasted%20image%2020260415162613.png)
+![](сриншоты1/Pasted%20image%2020260415162629.png)
+![](сриншоты1/Pasted%20image%2020260415162641.png)
 
 *Рис 9-11 Настройка EtherChannel на SW1*
 
 #### Аналогично на SW2.
 
-![[Pasted image 20260415163356.png]]
+![](сриншоты1/Pasted%20image%2020260415163356.png)
 
 *Рис.12 Настройка EtherChannel на SW2*
-
 
 ### Шаг 8. Создания Management interface для VLAN 1.
 
@@ -218,7 +136,7 @@
 2. IP: 1.0.0.50/8;
 3. Шлюз: 1.0.0.1
 ```
-![[Pasted image 20260415164931.png]]
+![](сриншоты1/Pasted%20image%2020260415164931.png)
 
 *Рис.13 Настройка Management interface на SW1*
 
@@ -228,7 +146,7 @@
 2. IP: 2.0.0.50/8;
 3. Шлюз: 2.0.0.1
 ```
-![[Pasted image 20260415165301.png]]
+![](сриншоты1/Pasted%20image%2020260415165301.png)
 
 *Рис. 14 Настройка Management interface на SW2*
 
@@ -240,40 +158,40 @@ user = nsk
 password = cisco
 Только SSH
 ```
-![[Pasted image 20260415165633.png]]
+![](сриншоты1/Pasted%20image%2020260415165633.png)
 
 *Рис. 15 Настройка SSHv2 на SW1*
 
 Точно также выполняем всю настройку на SW2.
 ```
-`conf t`
-`username nsk secret cisco`
-`crypto key generate rsa`
-`1024`
-`ip ssh version 2`
-`line vty 0 15`
-`login local`
-`transport input ssh`
-`exit`
-`end`
-`wr`
+conf t
+username nsk secret cisco
+crypto key generate rsa
+1024
+ip ssh version 2
+line vty 0 15
+login local
+transport input ssh
+exit
+end
+wr
 ```
 
 ### Шаг 11. Подключение F0/24 от SW1 к R1.
 
 #### Необходимо подключить интерфейс f0/24 от sw1 к r1 в режиме trunk.
 
-![[Pasted image 20260415170345.png]]
+![](сриншоты1/Pasted%20image%2020260415170345.png)
 
 *Рис. 16 Включение режима trunk на f0/24*
 
 ### Шаг 12. Настройка MOTD на SW1 и SW2.
 
-![[Pasted image 20260415170825.png]]
+![](сриншоты1/Pasted%20image%2020260415170825.png)
 
-*Рис. 17 Настройка MOTD на  rus-nsk-sw1*
+*Рис. 17 Настройка MOTD на rus-nsk-sw1*
 
-![[Pasted image 20260415171019.png]]
+![](сриншоты1/Pasted%20image%2020260415171019.png)
 
 *Рис. 18 Настройка MOTD на rus-nsk-sw2*
 
@@ -287,7 +205,7 @@ password = cisco
 4.Port Security;
 5.За нарушение - состояние err-disable
 ```
-![[Pasted image 20260415172101.png]]
+![](сриншоты1/Pasted%20image%2020260415172101.png)
 
 *Рис 19 Настройка интерфейсов на SW1*
 
@@ -295,93 +213,89 @@ password = cisco
 
 ### Шаг 14. Защита консоли.
 
-![[Pasted image 20260415172733.png]]
+![](сриншоты1/Pasted%20image%2020260415172733.png)
 
 *Рис. 20 Защита консоли на SW1*
 
 #### Идентично выполняем на SW2.
 
-### Шаг 15. Убрать timeout exex для консоли SSH.
+### Шаг 15. Убрать timeout exec для консоли SSH.
 
 #### Выполнить на SW1 и SW2 следующие команды:
 ```
-`line console 0`
-`exec-timeout 0 0`
-`exit`
+line console 0
+exec-timeout 0 0
+exit
 
-`line vty 0 15`
-`exec-timeout 0 0`
-`end`
-`wr`
+line vty 0 15
+exec-timeout 0 0
+end
+wr
 ```
 
 ### Шаг 16. Не прерывать ввод логам. Изменения буфера истории до 256 строк.
 
 #### Выполнить на SW1 и SW2 команды:
 ```
-`line console 0`
-`logging syschronous`
-`exit`
-`terminal history size 256`
-`end`
-`wr`
+line console 0
+logging synchronous
+exit
+terminal history size 256
+end
+wr
 ```
 
 ## Часть 2
 
 ### Шаг 1. IP на F0/1 маршрутизатора R1
-![[Pasted image 20260416151049.png]]
+![](сриншоты1/Pasted%20image%2020260416151049.png)
 
 *Рис. 21 настройка f0/1 на R1*
-
 
 ### Шаг 2. Router-on-a-Stick для VLAN 1,2,3,4
 
 #### Настройка VLAN 1
-![[Pasted image 20260416152015.png]]
+![](сриншоты1/Pasted%20image%2020260416152015.png)
 
-*Рис. 22 насройка f0/0.1*
+*Рис. 22 настройка f0/0.1*
 
 #### Настройка VLAN 2
-![[Pasted image 20260416152152.png]]
+![](сриншоты1/Pasted%20image%2020260416152152.png)
 
 *Рис. 23 настройка f0/0.2*
 
-
 #### Настройка VLAN 3
-![[Pasted image 20260416152431.png]]
+![](сриншоты1/Pasted%20image%2020260416152431.png)
 
 *Рис.24 настройка f0/0.3*
 
-
 #### Настройка VLAN 4
-![[Pasted image 20260416152732.png]]
+![](сриншоты1/Pasted%20image%2020260416152732.png)
 
 *Рис. 25 настройка f0/0.4*
 
-
 #### Включить физ. интерфейс
-![[Pasted image 20260416153043.png]]
- 
- *Рис. 26 настройка f0/0*
+![](сриншоты1/Pasted%20image%2020260416153043.png)
+
+*Рис. 26 настройка f0/0*
 
 ### Шаг 3. DHCP исключения.
 
-![[Pasted image 20260416161159.png]]
+![](сриншоты1/Pasted%20image%2020260416161159.png)
 
 *Рис. 27. Некоторые настройки DHCP.*
 
 #### Шаг 4. DHCP pool для VLAN 
 
-![[Pasted image 20260416161448.png]]
+![](сриншоты1/Pasted%20image%2020260416161448.png)
 
 *Рис.28 DHCP pool для VLAN2*
 
-![[Pasted image 20260416161615.png]]
+![](сриншоты1/Pasted%20image%2020260416161615.png)
 
 *Рис.29 DHCP pool для VLAN3*
 
-![[Pasted image 20260416161826.png]]
+![](сриншоты1/Pasted%20image%2020260416161826.png)
 
 *Рис.30 DHCP pool на VLAN4*
 
@@ -389,18 +303,17 @@ password = cisco
 
 #### Необходимо проверить корректность IP configuration на всех ПК в Новосибирске.
 
-![[Pasted image 20260416162044.png]]
+![](сриншоты1/Pasted%20image%2020260416162044.png)
 
 *Рис. 31 Итоговая конфигурация на PC0*
 
-![[Pasted image 20260416162121.png]]
+![](сриншоты1/Pasted%20image%2020260416162121.png)
 
 *Рис.32 Итоговая конфигурация на PC1*
 
-![[Pasted image 20260416162209.png]]
+![](сриншоты1/Pasted%20image%2020260416162209.png)
 
 *Рис.33 Итоговая конфигурация на PC2*
-
 
 ## Часть 3. 
 
@@ -408,27 +321,27 @@ password = cisco
 
 #### Настройка имени согласно топологии:
 
-![[Pasted image 20260416163021.png]]
+![](сриншоты1/Pasted%20image%2020260416163021.png)
 
 *Рис.34 Настройка имени на MLS*
 
-![[Pasted image 20260416163107.png]]
+![](сриншоты1/Pasted%20image%2020260416163107.png)
 
 *Рис.35 Включение маршрутизации на MLS.*
 
 ### Шаг 2. Создание и настройка портов доступа.
 
-![[Pasted image 20260416163303.png]]
+![](сриншоты1/Pasted%20image%2020260416163303.png)
 
 *Рис. 36 Создание VLAN 100 и VLAN 200*
 
-![[Pasted image 20260416163442.png]]
+![](сриншоты1/Pasted%20image%2020260416163442.png)
 
 *Рис 37. Назначение VLAN на соответствующие порты*
 
 ### Шаг 3. Настройка SVI интерфейсов.
 
-![[Pasted image 20260416163859.png]]
+![](сриншоты1/Pasted%20image%2020260416163859.png)
 
 *Рис.38 Назначение IP для VLAN 100 и 200*
 
@@ -436,70 +349,65 @@ password = cisco
 
 #### Необходимо перевести порты: F0/1, F0/2 F0/3 в L3 порты.
 
-![[Pasted image 20260416164138.png]]
+![](сриншоты1/Pasted%20image%2020260416164138.png)
 
 *Рис. 39 Настройка F0/1*
 
-![[Pasted image 20260416164226.png]]\\
+![](сриншоты1/Pasted%20image%2020260416164226.png)
 
 *Рис. 40 Настройка F0/2*
 
-![[Pasted image 20260416164718.png]]
+![](сриншоты1/Pasted%20image%2020260416164718.png)
 
 *Рис. 41 Настройка F0/3*
 
 ### Шаг 5. Настройка ПК
 
-![[Pasted image 20260416164851.png]]
+![](сриншоты1/Pasted%20image%2020260416164851.png)
 
 *Рис.42 Настройка сети для PC0*
 
-![[Pasted image 20260416165026.png]]
+![](сриншоты1/Pasted%20image%2020260416165026.png)
 
 *Рис.43 Настройка сети для PC1*
 
 ## Часть 4.
 
 ### Шаг 1. Настройка IP на R2.
-![[Pasted image 20260416170226.png]]
-![[Pasted image 20260416170443.png]]
+![](сриншоты1/Pasted%20image%2020260416170226.png)
+![](сриншоты1/Pasted%20image%2020260416170443.png)
 
 *Рис.44,45 настройка IP на R2*
 
-
 ### Шаг 2. Настройка IP на R3
- ![[Pasted image 20260416170842.png]]
- ![[Pasted image 20260416170941.png]]
- 
+![](сриншоты1/Pasted%20image%2020260416170842.png)
+![](сриншоты1/Pasted%20image%2020260416170941.png)
 
 *Рис. 46-47 настройка IP на R3*
 
-
-### Поверка HSRP
+### Проверка HSRP
 
 #### На R2
-![[Pasted image 20260416172611.png]]
+![](сриншоты1/Pasted%20image%2020260416172611.png)
 *Рис.48*
 
 #### На R3
-![[Pasted image 20260416172753.png]]
+![](сриншоты1/Pasted%20image%2020260416172753.png)
 *Рис.49*
-
 
 ### Тест отказоустойчивости
 
 #### На R2 выключить f0/1
-![[Pasted image 20260416173006.png]]
+![](сриншоты1/Pasted%20image%2020260416173006.png)
 *Рис.50*
 
 #### На R3
-![[Pasted image 20260416173243.png]]
+![](сриншоты1/Pasted%20image%2020260416173243.png)
 *Рис. 51*
-
 
 ### Часть 5.
 
-#### Какие чети участвуют
+#### Какие сети участвуют
 1.0.0.0/8
 2.0.0.0/8
 3.0.0.0/8
@@ -512,39 +420,35 @@ password = cisco
 200.0.0.0/24
 
 #### R1-EIGRP
-![[Pasted image 20260416181054.png]]
+![](сриншоты1/Pasted%20image%2020260416181054.png)
 *рис.52*
 
-
 #### R1-EIGRP
-![[Pasted image 20260416181310.png]]
+![](сриншоты1/Pasted%20image%2020260416181310.png)
 *рис.53*
 
 #### R2-EIGRP
-![[Pasted image 20260420150316.png]]
+![](сриншоты1/Pasted%20image%2020260420150316.png)
 *рис 54*
 
 #### RUS-MSK-MULTISW1:
 
-![[Pasted image 20260420151355.png]]
+![](сриншоты1/Pasted%20image%2020260420151355.png)
 *Рис. 55*
 
 ### Шаг 2 - Проверка с помощью SSH.
 
-![[Pasted image 20260420152700.png]]
-
+![](сриншоты1/Pasted%20image%2020260420152700.png)
 *Рис.55 SSH на sw1*
 
 Подключение SSH с сервера на sw2:
 
-![[Pasted image 20260420152813.png]]
-
+![](сриншоты1/Pasted%20image%2020260420152813.png)
 *Рис.56 SSH на sw2*
 
 ## Шаг 3 - Пинг с сервера:
 
-![[Pasted image 20260420152850.png]]
-
+![](сриншоты1/Pasted%20image%2020260420152850.png)
 *Рис.57 Пинг с сервера*
 
 # Часть 6
@@ -552,36 +456,31 @@ password = cisco
 
 rus-nsk-sw1:
 
-![[Pasted image 20260420152916.png]]
-
+![](сриншоты1/Pasted%20image%2020260420152916.png)
 *Рис.58 Настройка доступа SSH на sw1*
 
 rus-nsk-sw2:
 
-![[Pasted image 20260420152938.png]]
-
+![](сриншоты1/Pasted%20image%2020260420152938.png)
 *Рис.59 Настройка доступа SSH на sw2*
 
 ## Шаг 2 - Настройка доступ к веб-серверу
 
 rus-nsk-r1:
 
-![[Pasted image 20260420152959.png]]
-
+![](сриншоты1/Pasted%20image%2020260420152959.png)
 *Рис.60 Настройка доступ к веб-серверу*
 
 ## Шаг 3 - Запрет ответа на ping R1 и R2 в Москве
 
 rus-msk-r1:
 
-![[Pasted image 20260420153048.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153048.png)
 *Рис.61 Запрет ответа на ping на R1*
 
 rus-msk-r2:
 
-![[Pasted image 20260420153108.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153108.png)
 *Рис.62 Запрет ответа на ping на R2*
 
 # Часть 7
@@ -589,133 +488,113 @@ rus-msk-r2:
 
 rus-nsk-r1:
 
-![[Pasted image 20260420153125.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153125.png)
 *Рис.63 Создание loopback-интерфейса на R1*
 
 ## Шаг 2 - Настройка loopback на R2 в Москве
 
 rus-msk-r2:
 
-![[Pasted image 20260420153137.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153137.png)
 *Рис.64 Настройка loopback на R2*
 
 ## Шаг 3 - Настройка анонсирования Loopback-интерфейса через RIPv2
 
 rus-nsk-r1:
-![[Pasted image 20260420153212.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153212.png)
 
 *Рис.65 Настройка анонсирования loopback-интерфейса*
 
 rus-msk-r2:
 
-![[Pasted image 20260420153227.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153227.png)
 *Рис.66 Настройка анонсирования loopback-интерфейса*
 
 ## Шаг 4 - Ограничение работы RIPv2
 
 rus-msk-r1:
 
-![[Pasted image 20260420153242.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153242.png)
 *Рис.67 Ограничение RIPv2 на R1 в Мск*
 
 rus-msk-multisw1:
 
-![[Pasted image 20260420153250.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153250.png)
 *Рис.68 Ограничение RIPv2 на MLS в Мск*
 
 ## Шаг 5 - Настройка IP-адресации туннеля 
 
 rus-nsk-r1:
 
-![[Pasted image 20260420153304.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153304.png)
 *Рис.69 Настройка IP-адресации туннеля на R1*
 
 rus-msk-r2:
 
-![[Pasted image 20260420153318.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153318.png)
 *Рис.70 Настройка IP-адресации туннеля на R2*
 
 ## Шаг 6 - Проверка
 
-![[Pasted image 20260420153354.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153354.png)
 *Рис.71 Проверка loopback-интерфейса*
 
 # Часть 8
-## Шаг 1 - Настрйока NTP-сервера и Syslog-сервера
+## Шаг 1 - Настройка NTP-сервера и Syslog-сервера
 rus-nsk-r1:
 
-![[Pasted image 20260420153422.png]]
-
-*Рис.72 Настрйока NTP-сервера и Syslog-сервера*
-
+![](сриншоты1/Pasted%20image%2020260420153422.png)
+*Рис.72 Настройка NTP-сервера и Syslog-сервера*
 
 rus-msk-r1:
 
-![[Pasted image 20260420153442.png]]
-
-*Рис.73 Настрйока NTP-сервера и Syslog-сервера*
+![](сриншоты1/Pasted%20image%2020260420153442.png)
+*Рис.73 Настройка NTP-сервера и Syslog-сервера*
 
 rus-msk-r2:
 
-![[Pasted image 20260420153517.png]]
-
-*Рис.74 Настрйока NTP-сервера и Syslog-сервера*
+![](сриншоты1/Pasted%20image%2020260420153517.png)
+*Рис.74 Настройка NTP-сервера и Syslog-сервера*
 
 ## Шаг 2 - Включение SNMP на R1 и R2 в Мск
 rus-msk-r1:
 
-![[Pasted image 20260420153539.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153539.png)
 *Рис.75 Включение SNMP на R1 в Мск*
 
 rus-msk-r2
 
-![[Pasted image 20260420153605.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153605.png)
 *Рис.76 Включение SNMP на R2 в Мск*
 
 ## Шаг 3 - Настройка AAA и Telnet на R2 в Мск
 rus-msk-r2:
 
-![[Pasted image 20260420153619.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153619.png)
 *Рис.77 Настройка AAA и Telnet на R2 в Мск*
 
 ## Шаг 4 - Настройка FTP на R1 в Мск
 rus-msk-r1:
 
-![[Pasted image 20260420153652.png]]
-'
+![](сриншоты1/Pasted%20image%2020260420153652.png)
 *Рис.78 Настройка FTP на R1 в Мск*
 
 ## Шаг 5 - Отправка конфигурации R1 на сервер, с помощью FTP
 rus-msk-r1:
 
-![[Pasted image 20260420153710.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153710.png)
 *Рис.79 Отправка конфигурации*
 
 ## Шаг 6 - Отправка конфигурации R2 на сервер, с помощью TFTP
 rus-msk-r2:
 
-![[Pasted image 20260420153727.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153727.png)
 *Рис.80 Отправка конфигурации*
 
 ## Шаг 7 - Проверка на использование команд boot system в R2 в Мск
 rus-msk-r2:
 
-![[Pasted image 20260420153745.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153745.png)
 *Рис.81 Проверка на использование команд boot system в R2 в Мск*
 
 Команда ничего не выдаёт, значит команд boot system нет
@@ -725,47 +604,40 @@ rus-msk-r2:
 
 rus-msk-r2:
 
-![[Pasted image 20260420153807.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153807.png)
 *Рис.82 Создание пользователя Standby*
 
-Для работы на R2 по telnet нужео поставить пароль для перехода в привилегерованный режим.
+Для работы на R2 по telnet нужно поставить пароль для перехода в привилегированный режим.
 
 rus-msk-r2:
 
-![[Pasted image 20260420153844.png]]
-
-*Рис.83 Пароль для привилегерованного режима.*
+![](сриншоты1/Pasted%20image%2020260420153844.png)
+*Рис.83 Пароль для привилегированного режима.*
 
 Дальше можем подключаться по telnet.
 
 rus-msk-r1:
 
-![[Pasted image 20260420153903.png]]
-
+![](сриншоты1/Pasted%20image%2020260420153903.png)
 *Рис.84 Подключение к R2 по telnet*
 
 ## Шаг 9 - Изменение локального имени пользователя в R2
 Для начала вводим команду для игнорирования конфигурации при загрузке. Вся настройка происходит на rus-msk-r2.
 
-![[Pasted image 20260420155829.png]]
-
+![](сриншоты1/Pasted%20image%2020260420155829.png)
 *Рис.85 Ввод команды для игнорирования конфигурации при загрузке.*
 
-Дальше предложит войти в диалоговое окно начальнйо настойки, нужно отказаться.
+Дальше предложит войти в диалоговое окно начальной настройки, нужно отказаться.
 
-![[Pasted image 20260420155849.png]]
-
+![](сриншоты1/Pasted%20image%2020260420155849.png)
 *Рис.86 Отказ от входа в диалоговое окно начальной настройки*
 
 Затем загружаем старую конфигурацию и изменяем имя пользователя 
 
-![[Pasted image 20260420155904.png]]
-
-*Рис.87 загрузка старой конфигурации
+![](сриншоты1/Pasted%20image%2020260420155904.png)
+*Рис.87 загрузка старой конфигурации*
 
 Возвращаем значение конфигурационного регистра.
 
-![[Pasted image 20260420155917.png]]
-
-*Рис.88 Возвращение значения конфигурационного регистра.
+![](сриншоты1/Pasted%20image%2020260420155917.png)
+*Рис.88 Возвращение значения конфигурационного регистра.*
