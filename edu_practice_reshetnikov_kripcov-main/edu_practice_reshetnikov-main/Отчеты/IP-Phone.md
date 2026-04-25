@@ -103,3 +103,18 @@ Ip phone 2:
 <img width="326" height="355" alt="image" src="https://github.com/user-attachments/assets/47382466-4bc2-4ce1-911b-4efd2f26d723" />
 
 *Рис.6 Создание рабочих номеров.*
+
+
+## Практическая 4.
+
+### Шаг 1. Топология
+
+
+
+
+
+
+
+
+
+
